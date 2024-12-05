@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredunyamUz Bot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>PredunyamUz Bot Menyu</h1>
+    <button onclick="sendCommand('/start')">♻️ Botni qayta ishga tushurish</button>
+    <button onclick="sendCommand('/uzpay')">📤 So'mda to'ldirish</button>
+    <button onclick="sendCommand('/rupay')">📤 Rublda to'ldirish</button>
+    <button onclick="sendCommand('/hisobim')">💳 Balansingiz</button>
+    <button onclick="sendCommand('/ref')">👥 Mening havolam</button>
+    <button onclick="sendCommand('/iscue')">🙋‍♂ Xatolik haqida habar berish</button>
+
+    <script>
+        function sendCommand(command) {
+            if (window.Telegram && Telegram.WebApp) {
+                Telegram.WebApp.sendData(command);
+            } else {
+                alert('Bu funksiya faqat Telegram Web App orqali ishlaydi.');
+            }
+        }
+    </script>
+</body>
+</html>
